@@ -9,3 +9,5 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
   DisplayCopNames: true
+Style/Documentation:
+  Enabled: false
