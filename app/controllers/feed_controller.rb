@@ -3,5 +3,7 @@
 class FeedController < ApplicationController
   before_action :authenticate_user!
 
-  def index; end
+  def index
+    @books = Book.all
+  end
 end

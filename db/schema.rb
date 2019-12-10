@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_193539) do
+ActiveRecord::Schema.define(version: 2019_12_10_040115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,35 @@ ActiveRecord::Schema.define(version: 2019_12_09_193539) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "book_additions", force: :cascade do |t|
+    t.bigint "shelf_id", null: false
+    t.bigint "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_book_additions_on_book_id"
+    t.index ["shelf_id"], name: "index_book_additions_on_shelf_id"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "isbn"
+    t.string "isbn13"
+    t.integer "edition"
+    t.boolean "status", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["isbn"], name: "index_books_on_isbn", unique: true
+    t.index ["isbn13"], name: "index_books_on_isbn13", unique: true
+  end
+
+  create_table "shelves", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_shelves_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -50,4 +79,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_193539) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "book_additions", "books"
+  add_foreign_key "book_additions", "shelves"
+  add_foreign_key "shelves", "users"
 end
