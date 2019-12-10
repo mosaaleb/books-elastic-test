@@ -1,1 +1,9 @@
-<h1 class="text-blue-400 text-xl"></h1>
+<% @books.each do |book| %>
+  <div class="book">
+    <%= book.title  %>
+    <%= book.description %>
+    <%= book.isbn %>
+    <%= book.edition %>
+    <%= book.status %>
+  </div>
+<% end %>
