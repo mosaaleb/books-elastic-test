@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   devise_scope :user do
     root 'devise/sessions#new'
   end
+  resources :books, only: %i[index show new create]
+  resources :users, only: :index
 end

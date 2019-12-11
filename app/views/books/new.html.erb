@@ -1,0 +1,11 @@
+<div class="flex w-1/4 mx-auto">
+<%= form_for(@book) do |form| %>
+  <div class=""><%= form.file_field :cover, class: 'p-3 mb-4 border rounded border-grey-400 w-full' %></div>
+  <div class=""><%= form.text_field :title, class: 'p-3 mb-4 border rounded border-grey-400 w-full' %></div>
+  <div class=""><%= form.text_field :description, class: 'p-3 mb-4 border rounded border-grey-400 w-full' %></div>
+  <div class=""><%= form.text_field :isbn, class: 'p-3 mb-4 border rounded border-grey-400 w-full' %></div>
+  <div class=""><%= form.text_field :isbn13, class: 'p-3 mb-4 border rounded border-grey-400 w-full' %></div>
+  <div class=""><%= form.text_field :edition, class: 'p-3 mb-4 border rounded border-grey-400 w-full' %></div>
+  <div class=""><%= form.submit %></div>
+<% end %>
+</div>
