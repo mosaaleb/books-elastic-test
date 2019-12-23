@@ -5,6 +5,12 @@ require 'image_processing/mini_magick'
 class AvatarGenerator
   attr_reader :user
 
+  AVATAR_COLORS = { '#561B8D' => '#C8F7C5',
+                    '#DFF0D8' => '#468847',
+                    '#F0E68C' => '#F0E68C',
+                    '#C8C8C8' => '#551700',
+                    '#CD594A' => '#FFFFFF' }.freeze
+
   def self.call(user)
     new(user).call
   end
@@ -25,12 +31,13 @@ class AvatarGenerator
   private
 
   def generate_image
+    rand = rand 0..4
     MiniMagick::Tool::Convert.new do |image|
       image.size '200x200'
       image.gravity 'center'
-      image.xc 'gray'
+      image.xc AVATAR_COLORS.keys[rand]
       image.pointsize 100
-      image.fill('#ffffffff')
+      image.fill AVATAR_COLORS.values[rand]
       image.draw "text 0,0 #{initial_letters}"
       image << 'default.jpg'
     end
