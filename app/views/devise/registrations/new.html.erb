@@ -4,11 +4,10 @@
       <h1 class="mb-8 text-3xl text-center">Sign up</h1>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Username" %>
-        <%= f.email_field :email,  autocomplete: "email", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Email" %>
+        <%= f.email_field :email, autocomplete: "email", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Email" %>
+        <%= f.text_field :first_name, autocomplete: "first name", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "First Name" %>
+        <%= f.text_field :last_name, autocomplete: "last name", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Last Name" %>
         <%= f.password_field :password, class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Password" %>
-        <% if @minimum_password_length %>
-          <em class="p-3">(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Confirm Password" %>
         <%= f.submit "Create Account", class: "w-full text-center py-3 rounded bg-green text-white hover:bg-green-700 focus:outline-none my-1" %>
         <div class="text-center text-sm text-grey-dark mt-4">

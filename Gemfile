@@ -35,7 +35,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'pry-rails', '~> 0.3.4'
   gem 'rspec-rails'
 end
 
@@ -43,6 +42,7 @@ group :development do
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping running in background
+  gem 'pry-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Access an interactive console by calling 'console' anywhere in the code.

@@ -25,14 +25,14 @@
 
     <div class="relative group">
       <div class="flex items-center cursor-pointer text-sm text-blue border border-white border-b-0 group-hover:border-grey-light rounded-t-lg py-1 px-2">
-        <%= avatar(current_user, 100) %>
+        <%= image_tag(current_user.avatar, class: 'avatar-sm') %>
         <p class="pl-1 text-lg"><%= current_user.username %></p>
         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
       </div>
 
       <div class="absolute arrow-box items-center border rounded-b-lg bg-white invisible group-hover:visible w-32">
         <a href="#" class="px-4 py-2 block text-black hover:bg-gray-200">Profile</a>
-        <a href="#" class="px-4 py-2 block text-black hover:bg-gray-200">Edit Profile</a>
+        <%= link_to('Edit Profile', edit_user_registration_path, class: 'px-4 py-2 block text-black hover:bg-gray-200') %>
         <a href="#" class="px-4 py-2 block text-black hover:bg-gray-200">My Books</a>
         <hr class="border-t mx-2 border-grey-light">
         <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'px-4 py-2 block text-black hover:bg-gray-200') %>
