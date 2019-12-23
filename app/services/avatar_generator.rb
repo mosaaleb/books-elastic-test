@@ -7,7 +7,7 @@ class AvatarGenerator
 
   AVATAR_COLORS = { '#561B8D' => '#C8F7C5',
                     '#DFF0D8' => '#468847',
-                    '#F0E68C' => '#F0E68C',
+                    '#F0E68C' => '#550055',
                     '#C8C8C8' => '#551700',
                     '#CD594A' => '#FFFFFF' }.freeze
 

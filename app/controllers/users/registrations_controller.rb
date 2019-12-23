@@ -14,7 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do
-      DefaultAvatar.new(resource).attach_default_avatar
+      AvatarGenerator.call(resource)
     end
   end
 
