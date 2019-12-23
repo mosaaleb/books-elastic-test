@@ -6,12 +6,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    super { resource.build_shelf }
+    super do
+      resource.build_shelf
+    end
   end
 
   # POST /resource
   def create
-    super
+    super do
+      DefaultAvatar.new(resource).attach_default_avatar
+    end
   end
 
   # GET /resource/edit
