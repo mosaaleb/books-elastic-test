@@ -8,7 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  after_create :generate_image
+  after_create :generate_default_avatar
 
   # validations
   validates :username, presence: true
@@ -17,25 +17,7 @@ class User < ApplicationRecord
   has_one_attached :avatar, dependent: :destroy
   has_one :shelf, dependent: :destroy
 
-  def initial_name
-    first_name.chr.capitalize
-  end
-
-  def generate_image
-    MiniMagick::Tool::Convert.new do |image|
-      image.size '200x200'
-      image.gravity 'center'
-      image.xc 'gray'
-      image.pointsize 160
-      image.font 'Umpush'
-      image.fill('#ffffffff')
-      image.draw "text 0,0 #{initial_name}"
-      image << 'image.jpg'
-    end
-    avatar.attach(io: File.open('image.jpg'),
-                  filename: 'test.jpg',
-                  content_type: 'image/jpg')
-
-    File.delete('image.jpg')
+  def generate_default_avatar
+    DefaultAvatar.new(self).attach_default_avatar
   end
 end
