@@ -31,7 +31,7 @@
       </div>
 
       <div class="absolute arrow-box items-center border rounded-b-lg bg-white invisible group-hover:visible w-32">
-        <a href="#" class="px-4 py-2 block text-black hover:bg-gray-200">Profile</a>
+        <%= link_to('Profile', @user, class: 'px-4 py-2 block text-black hover:bg-gray-200') %>
         <%= link_to('Edit Profile', edit_user_registration_path, class: 'px-4 py-2 block text-black hover:bg-gray-200') %>
         <a href="#" class="px-4 py-2 block text-black hover:bg-gray-200">My Books</a>
         <hr class="border-t mx-2 border-grey-light">

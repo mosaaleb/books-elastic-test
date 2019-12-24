@@ -3,6 +3,7 @@
     <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
       <h1 class="mb-8 text-3xl text-center">Sign up</h1>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
         <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Username" %>
         <%= f.email_field :email, autocomplete: "email", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Email" %>
         <%= f.text_field :first_name, autocomplete: "first name", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "First Name" %>
