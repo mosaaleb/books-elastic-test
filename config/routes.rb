@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   end
 
   resources :books, only: %i[index show new create]
-  resources :users, only: :index
+  resources :users, only: %i[index show]
 end
