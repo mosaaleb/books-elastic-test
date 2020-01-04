@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   end
 
   resources :books, only: %i[index show new create]
-  resources :users, only: %i[index show]
+  resources :users, only: %i[index show], path: '', param: :username
 end

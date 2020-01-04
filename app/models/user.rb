@@ -2,11 +2,14 @@
 
 class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :validatable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
   # validations
-  validates :username, presence: true, uniqueness: true
+  validates :username,
+            presence: true,
+            uniqueness: true,
+            format: { with: /\A[a-zA-Z0-9_\.]*\z/ }
 
   # associations
   has_one_attached :avatar, dependent: :destroy
@@ -17,3 +20,5 @@ class User < ApplicationRecord
     username
   end
 end
+
+# rails g migration addAuthorToBooks author:references
