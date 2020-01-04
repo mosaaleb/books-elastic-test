@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_24_212011) do
+ActiveRecord::Schema.define(version: 2019_12_30_000741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2019_12_24_212011) do
     t.boolean "status", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "author_id", null: false
+    t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["isbn"], name: "index_books_on_isbn", unique: true
     t.index ["isbn13"], name: "index_books_on_isbn13", unique: true
   end
@@ -84,5 +86,6 @@ ActiveRecord::Schema.define(version: 2019_12_24_212011) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "book_additions", "books"
   add_foreign_key "book_additions", "shelves"
+  add_foreign_key "books", "users", column: "author_id"
   add_foreign_key "shelves", "users"
 end

@@ -3,17 +3,17 @@
 @import "tailwindcss/utilities";
 
 .avatar-sm {
-  @apply .rounded-full .border-2 .border-transparent .w-10 .h-10;
+  @apply .rounded-full .border-2 .border-gray-300 .w-10 .h-10;
 }
 
 .avatar-md {
-  @apply .rounded-full .border-2 .border-transparent .w-16 .h-16;
+  @apply .rounded-full .border-2 .border-gray-300 .w-16 .h-16;
 }
 
 .avatar-lg {
-  @apply .rounded-full .border-2 .border-transparent .w-20 .h-20;
+  @apply .rounded-full .border-2 .border-gray-300 .w-20 .h-20;
 }
 
 .avatar-lg {
-  @apply .rounded-full .border-2 .border-transparent .w-24 .h-24;
+  @apply .rounded-full .border-2 .border-gray-300 .w-24 .h-24;
 }
