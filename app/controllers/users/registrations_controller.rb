@@ -6,14 +6,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    super do
-      resource.build_shelf
-    end
+    super
   end
 
   # POST /resource
   def create
     super do
+      resource.create_shelf
       AvatarGenerator.call(resource)
     end
   end
