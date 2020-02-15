@@ -4,25 +4,42 @@
       <h1 class="mb-8 text-3xl text-center">Sign up</h1>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
-        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Username" %>
-        <%= f.email_field :email, autocomplete: "email", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Email" %>
-        <%= f.text_field :first_name, autocomplete: "first name", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "First Name" %>
-        <%= f.text_field :last_name, autocomplete: "last name", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Last Name" %>
-        <%= f.password_field :password, class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Password" %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "Confirm Password" %>
-        <%= f.submit "Create Account", class: "w-full text-center py-3 rounded bg-green text-white hover:bg-green-700 focus:outline-none my-1" %>
+        <%= f.text_field :username,
+                          autofocus: true,
+                          autocomplete: "username",
+                          placeholder: "Username",
+                          class: "block border border-grey-light w-full p-3 rounded mb-4" %>
+        <%= f.email_field :email,
+                           autocomplete: "email",
+                           placeholder: "Email",
+                           class: "block border border-grey-light w-full p-3 rounded mb-4" %>
+        <%= f.text_field :first_name,
+                          autocomplete: "first name",
+                          placeholder: "First Name",
+                          class: "block border border-grey-light w-full p-3 rounded mb-4" %>
+        <%= f.text_field :last_name,
+                          autocomplete: "last name",placeholder: "Last Name",
+                          class: "block border border-grey-light w-full p-3 rounded mb-4" %>
+        <%= f.password_field :password,
+                             placeholder: "Password",
+                             class: "block border border-grey-light w-full p-3 rounded mb-4" %>
+        <%= f.password_field :password_confirmation,
+                              placeholder: "Confirm Password",
+                              class: "block border border-grey-light w-full p-3 rounded mb-4"%>
+        <%= f.submit "Create Account",
+                      class: "w-full text-center py-3 rounded bg-green text-white hover:bg-green-700 focus:outline-none my-1" %>
         <div class="text-center text-sm text-grey-dark mt-4">
-          By signing up, you agree to the 
+          By signing up, you agree to the
           <a class="no-underline border-b border-grey-dark text-gray-700" href="#">
             Terms of Service
-          </a> and 
+          </a> and
           <a class="no-underline border-b border-grey-dark text-gray-700" href="#">
             Privacy Policy
           </a>
         </div>
       </div>
       <div class="text-grey-dark mt-6">
-        Already have an account? 
+        Already have an account?
         <a class="no-underline border-b border-blue text-blue" href="../login/">
           <%= render "devise/shared/links" %>
         <% end %>

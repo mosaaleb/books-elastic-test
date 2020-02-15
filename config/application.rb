@@ -35,6 +35,7 @@ module Bookstore
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.generators do |g|
+      g.view_specs false
       g.controller_specs false
     end
   end

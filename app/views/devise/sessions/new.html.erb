@@ -7,10 +7,17 @@
           <div class="w-full mt-4">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal w-3/4 mx-auto") do |f| %>
               <div class="flex flex-col mt-4">
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "flex-grow p-3 mb-4 border rounded border-grey-400", placeholder: "Email" %>
+                <%= f.text_field :email,
+                                  autofocus: true,
+                                  placeholder: "Email",
+                                  autocomplete: "email",
+                                  class: "flex-grow p-3 mb-4 border rounded border-grey-400" %>
               </div>
               <div class="flex flex-col mt-4">
-                <%= f.password_field :password, autocomplete: "current-password", class: "flex-grow p-3 mb-4 rounded border border-grey-400", placeholder: "Password" %>
+                <%= f.password_field :password,
+                                      placeholder: "Password",
+                                      autocomplete: "current-password",
+                                      class: "flex-grow p-3 mb-4 rounded border border-grey-400" %>
               </div>
               <% if devise_mapping.rememberable? %>
                 <div class="flex items-center mt-4">

@@ -1,9 +1,10 @@
-<div class="max-w-sm rounded shadow-lg m-5">
+<div class="flex rounded shadow-lg m-5 bg-gray-100">
   <div>
-    <%= image_tag book.cover.variant(resize: '100') %>
+    <%= image_tag book.cover.variant(resize: '100x150!') %>
   </div>
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2"><%= book.title %></div>
-    <p class="text-gray-700 text-base"><%= truncate(book.description, length: 40) %></p>
+    <p class="text-gray-700 text-base"><%= truncate(book.description, length: 70) %></p>
+    <button type="button" >Add to My lib</button>
   </div>
 </div>

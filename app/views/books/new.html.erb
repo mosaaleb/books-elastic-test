@@ -1,11 +1,36 @@
 <div class="flex w-1/4 mx-auto">
-<%= form_for(@book) do |form| %>
-  <div><%= form.file_field :cover, class: 'p-3 mb-4 border rounded border-grey-400 w-full' %></div>
-  <div><%= form.text_field :title, class: 'p-3 mb-4 border rounded border-grey-400 w-full', placeholder: 'Title' %></div>
-  <div><%= form.text_area :description, class: 'p-3 mb-4 border rounded border-grey-400 w-full', placeholder: 'description' %></div>
-  <div><%= form.text_field :isbn, class: 'p-3 mb-4 border rounded border-grey-400 w-full', placeholder: 'isbn' %></div>
-  <div><%= form.text_field :isbn13, class: 'p-3 mb-4 border rounded border-grey-400 w-full', placeholder: 'isbn13' %></div>
-  <div><%= form.text_field :edition, class: 'p-3 mb-4 border rounded border-grey-400 w-full', placeholder: 'edition' %></div>
-  <div><%= form.submit %></div>
-<% end %>
+  <%= form_for(@book) do |form| %>
+    <div>
+      <%= form.file_field :cover,
+                           class: 'p-3 mb-4 border rounded border-grey-400 w-full' %>
+    </div>
+    <div>
+      <%= form.text_field :title,
+                           placeholder:'Title',
+                           class: 'p-3 mb-4 border rounded border-grey-400 w-full' %>
+    </div>
+    <div>
+      <%= form.text_area :description,
+                          placeholder: 'Description',
+                          class: 'p-3 mb-4 border rounded border-grey-400 w-full' %>
+    </div>
+    <div>
+      <%= form.text_field :isbn,
+                           placeholder: 'isbn',
+                           class: 'p-3 mb-4 border rounded border-grey-400 w-full' %>
+    </div>
+    <div>
+      <%= form.text_field :isbn13,
+                           placeholder: 'isbn13',
+                           class: 'p-3 mb-4 border rounded border-grey-400 w-full' %>
+    </div>
+    <div>
+      <%= form.text_field :edition,
+                           placeholder: 'edition',
+                           class: 'p-3 mb-4 border rounded border-grey-400 w-full' %>
+    </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
 </div>
