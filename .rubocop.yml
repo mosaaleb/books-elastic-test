@@ -13,5 +13,4 @@ AllCops:
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
-  Enabled: true
-  EnforcedStyle: compact
+  Enabled: false
