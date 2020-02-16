@@ -20,5 +20,3 @@ class User < ApplicationRecord
     username
   end
 end
-
-# rails g migration addAuthorToBooks author:references
