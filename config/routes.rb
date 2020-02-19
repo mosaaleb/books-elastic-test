@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     member do
       post 'add', to: 'book_additions#create'
     end
+    member do
+      delete 'remove', to: 'book_additions#destroy'
+    end
   end
   resources :users, only: %i[index show], path: '', param: :username
 end

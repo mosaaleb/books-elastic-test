@@ -20,6 +20,14 @@ class User < ApplicationRecord
     shelf.books << book
   end
 
+  def already_added?(book)
+    shelf.books.include?(book)
+  end
+
+  def remove_book_from_shelf(book)
+    shelf.books.destroy(book)
+  end
+
   def to_param
     username
   end
