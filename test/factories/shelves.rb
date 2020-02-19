@@ -2,6 +2,5 @@
 
 FactoryBot.define do
   factory :shelf do
-    association :user, strategy: :build
   end
 end
