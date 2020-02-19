@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     root 'devise/sessions#new'
   end
 
+  resources :authors, only: %i[index show], param: :name
   resources :books, only: %i[index show new create]
   resources :users, only: %i[index show], path: '', param: :username
 end

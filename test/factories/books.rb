@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :book do
     title { Faker::Book.title }
-    description { Faker::Lorem.sentence }
+    description { Faker::Lorem.paragraph }
     isbn { '1257561035' }
     isbn13 { '9783161484100' }
     cover do
