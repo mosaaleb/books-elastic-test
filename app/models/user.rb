@@ -16,6 +16,10 @@ class User < ApplicationRecord
   has_one :shelf, dependent: :destroy
 
   # instance methods
+  def add_book_to_shelf(book)
+    shelf.books << book
+  end
+
   def to_param
     username
   end

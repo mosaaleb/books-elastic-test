@@ -1,0 +1,2 @@
+module BookAdditionsHelper
+end

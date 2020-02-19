@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   end
 
   resources :authors, only: %i[index show], param: :name
-  resources :books, only: %i[index show new create]
+  resources :books, only: %i[index show new create] do
+    member do
+      post 'add', to: 'book_additions#create'
+    end
+  end
   resources :users, only: %i[index show], path: '', param: :username
 end
