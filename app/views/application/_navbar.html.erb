@@ -26,7 +26,7 @@
       <div class="absolute arrow-box items-center border rounded-b-lg bg-white invisible group-hover:visible w-32">
         <%= link_to('Profile', current_user, class: 'px-4 py-2 block text-black hover:bg-gray-200') %>
         <%= link_to('Edit Profile', edit_user_registration_path, class: 'px-4 py-2 block text-black hover:bg-gray-200') %>
-        <a href="#" class="px-4 py-2 block text-black hover:bg-gray-200">My Books</a>
+        <%= link_to('My Books', user_shelf_path(current_user), class: 'px-4 py-2 block text-black hover:bg-gray-200') %>
         <hr class="border-t mx-2 border-gray-400">
         <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'px-4 py-2 block text-black hover:bg-gray-200') %>
       </div>

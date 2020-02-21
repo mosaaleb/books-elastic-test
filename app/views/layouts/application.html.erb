@@ -4,26 +4,23 @@
     <title>Bookstore</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body class="bg-blue-100">
     <%= nav_bar %>
     <div class="notification-message">
       <p class="alert"><%= flash[:alert] %></p>
       <p class="notice"><%= flash[:notice] %></p>
     </div>
-
     <%= yield %>
-
-    <% if Rails.env.development? %>
-      <div class="absolute bottom-0 left-0 bg-gray-800 text-gray-100 p-2 text-xs">
-        <%= debug(params) %>
-      </div> 
+    <% if false %>
+      <% if Rails.env.development? %>
+        <div class="absolute bottom-0 left-0 bg-gray-800 text-gray-100 p-2 text-xs">
+          <%= debug(params) %>
+        </div>
+      <% end %>
     <% end %>
-    
-  </body>
-</html>
+    </body>
+  </html>

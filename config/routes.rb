@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'shelves/show'
   devise_for :users, controllers: { registrations: 'users/registrations' },
                      path: '', path_names: { sign_in: 'login',
                                              sign_up: 'register',
@@ -23,5 +24,7 @@ Rails.application.routes.draw do
       delete 'remove', to: 'book_additions#destroy'
     end
   end
-  resources :users, only: %i[index show], path: '', param: :username
+  resources :users, only: %i[index show], path: '', param: :username do
+    resource :shelf, only: %i[show]
+  end
 end
