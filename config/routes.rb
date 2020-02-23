@@ -15,12 +15,15 @@ Rails.application.routes.draw do
     root 'devise/sessions#new'
   end
 
-  resources :authors, only: %i[index show], param: :name
+  resources :authors, only: %i[index show], param: :name do
+    member do
+      post 'follow', to: 'followships#create'
+    end
+  end
+
   resources :books, only: %i[index show new create] do
     member do
       post 'add', to: 'book_additions#create'
-    end
-    member do
       delete 'remove', to: 'book_additions#destroy'
     end
   end

@@ -14,6 +14,8 @@ class User < ApplicationRecord
   # associations
   has_one_attached :avatar, dependent: :destroy
   has_one :shelf, dependent: :destroy
+  has_many :followships, dependent: :destroy
+  has_many :followings, through: :followships, source: :author
 
   # instance methods
   def add_book_to_shelf(book)
@@ -30,5 +32,9 @@ class User < ApplicationRecord
 
   def to_param
     username
+  end
+
+  def follow(user)
+    followings << user
   end
 end

@@ -18,6 +18,6 @@ class BookAdditionsController < ApplicationController
   private
 
   def book
-    Book.find(params[:id])
+    @book ||= Book.find(params[:id])
   end
 end

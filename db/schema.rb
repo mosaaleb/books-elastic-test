@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_213012) do
+ActiveRecord::Schema.define(version: 2020_02_23_155155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,16 @@ ActiveRecord::Schema.define(version: 2020_02_15_213012) do
     t.index ["isbn13"], name: "index_books_on_isbn13", unique: true
   end
 
+  create_table "followships", force: :cascade do |t|
+    t.bigint "author_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_followships_on_author_id"
+    t.index ["user_id", "author_id"], name: "index_followships_on_user_id_and_author_id", unique: true
+    t.index ["user_id"], name: "index_followships_on_user_id"
+  end
+
   create_table "shelves", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -93,5 +103,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_213012) do
   add_foreign_key "book_additions", "books"
   add_foreign_key "book_additions", "shelves"
   add_foreign_key "books", "authors"
+  add_foreign_key "followships", "authors"
+  add_foreign_key "followships", "users"
   add_foreign_key "shelves", "users"
 end
