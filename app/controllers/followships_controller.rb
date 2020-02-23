@@ -9,6 +9,12 @@ class FollowshipsController < ApplicationController
     flash[:notice] = "You are now following #{author.name}"
   end
 
+  def destroy
+    current_user.unfollow(author)
+    redirect_back(fallback_location: root_path)
+    flash[:notice] = "You have un-followed #{author.name}"
+  end
+
   private
 
   def author

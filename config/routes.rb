@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :authors, only: %i[index show], param: :name do
     member do
       post 'follow', to: 'followships#create'
+      delete 'unfollow', to: 'followships#destroy'
     end
   end
 

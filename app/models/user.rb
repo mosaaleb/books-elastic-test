@@ -34,7 +34,15 @@ class User < ApplicationRecord
     username
   end
 
-  def follow(user)
-    followings << user
+  def follow(author)
+    followings << author
+  end
+
+  def unfollow(author)
+    followings.destroy author
+  end
+
+  def following?(author)
+    following_ids.include? author.id
   end
 end
