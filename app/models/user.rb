@@ -30,10 +30,6 @@ class User < ApplicationRecord
     shelf.books.destroy(book)
   end
 
-  def to_param
-    username
-  end
-
   def follow(author)
     followings << author
   end
@@ -44,5 +40,9 @@ class User < ApplicationRecord
 
   def following?(author)
     following_ids.include? author.id
+  end
+
+  def to_param
+    username
   end
 end
