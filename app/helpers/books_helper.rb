@@ -8,4 +8,12 @@ module BooksHelper
       link_to 'Add book', add_book_path(book), method: :post
     end
   end
+
+  def book_status(show_book_status, &block)
+    content_tag(:div, &block) if show_book_status
+  end
+
+  def statuses_options
+    BookAddition.statuses.map { |k, v| [k.humanize, v] }
+  end
 end
