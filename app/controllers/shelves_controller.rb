@@ -2,6 +2,6 @@
 
 class ShelvesController < ApplicationController
   def show
-    @shelf = current_user.shelf.shelf_books
+    @shelf_books = current_user.shelf.shelf_books
   end
 end

@@ -1,6 +1,6 @@
 <header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2 shadow-md">
   <div class="flex-1 flex justify-between items-center">
-    <a href="#">
+    <a href="/">
       <p class="text-blue-500 text-2xl font-bold">BookHub</p>
     </a>
   </div>
@@ -13,7 +13,7 @@
   <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
     <nav>
       <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
-        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="#">Home</a></li>
+        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="/">Home</a></li>
         <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2" href="#">Browse</a></li>
       </ul>
     </nav>
@@ -21,7 +21,9 @@
       <div class="flex items-center cursor-pointer text-sm text-blue border border-white border-b-0 group-hover:border-grey-light rounded-t-lg py-1 px-2">
         <%= image_tag(current_user.avatar, class: 'avatar-sm') %>
         <p class="pl-1 text-lg"><%= current_user.username %></p>
-        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+        </svg>
       </div>
       <div class="absolute arrow-box items-center border rounded-b-lg bg-white invisible group-hover:visible w-32">
         <%= link_to('Profile', current_user, class: 'px-4 py-2 block text-black hover:bg-gray-200') %>
