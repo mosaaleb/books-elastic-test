@@ -15,6 +15,12 @@ class BookAdditionsController < ApplicationController
     flash[:notice] = "Book #{book.title} is removed from your library"
   end
 
+  def update
+    current_user.mark_book_as(params[:status])
+    redirect_back(fallback_location: root_path)
+    flash[:notice] = "Book #{book.title} is removed from your library"
+  end
+
   private
 
   def book
