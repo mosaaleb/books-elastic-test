@@ -3,10 +3,13 @@
 class BookAddition < ApplicationRecord
   enum status: { unread: 0, currently_reading: 1, read: 2 }
 
-  # associations
+  enum is_approved: { unapproved: 'unapproved',
+                      approved: 'approved',
+                      approved_rejected: 'approved_rejected',
+                      unapproved_rejected: 'unapproved_rejected' }
+
   belongs_to :book
   belongs_to :shelf
 
-  # validations
   validates :book, uniqueness: { scope: :shelf_id }
 end
