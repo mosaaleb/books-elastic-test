@@ -15,12 +15,5 @@
       <p class="notice"><%= flash[:notice] %></p>
     </div>
     <%= yield %>
-    <% if false %>
-      <% if Rails.env.development? %>
-        <div class="absolute bottom-0 left-0 bg-gray-800 text-gray-100 p-2 text-xs">
-          <%= debug(params) %>
-        </div>
-      <% end %>
-    <% end %>
     </body>
   </html>
