@@ -8,11 +8,10 @@
 require 'faker'
 
 ActiveRecord::Base.connection.reset_pk_sequence!('authors')
-(1..20).each do |i|
+(1..20).each do |_i|
   Author.create!(name: Faker::Book.author)
 end
 p 'authors created'
-
 
 ActiveRecord::Base.connection.reset_pk_sequence!('books')
 Author.all.each do |author|

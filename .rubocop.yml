@@ -10,10 +10,30 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
   DisplayCopNames: true
+
 Style/Documentation:
   Enabled: false
+
+Metrics/LineLength:
+  Max: 80
+  IngorePatterns: ['(\A|\s)#']
+
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Safe: true
+  SafeAutoCorrect: true
+
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
