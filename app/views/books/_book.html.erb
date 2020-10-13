@@ -17,8 +17,4 @@
       <%= select(:book_addition, :status, statuses_options, selected: book.status) %>
     <% end %>
   </div>
-
-  <%= link_to 'Add book to your library',
-              add_book_path(book),
-              method: :post if book.cover.attached? %>
 </div>
