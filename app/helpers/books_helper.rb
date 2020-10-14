@@ -10,7 +10,7 @@ module BooksHelper
   end
 
   def book_status(show_book_status, &block)
-    content_tag(:div, &block) if show_book_status
+    tag.div(&block) if show_book_status
   end
 
   def statuses_options

@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Book < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
   validates :title, :description, :cover, presence: true
   validates :isbn, :isbn13,
             format: { with: /\A(97(8|9))?\d{9}(\d|X)\z/ },
